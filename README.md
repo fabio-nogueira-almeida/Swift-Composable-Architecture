@@ -3,7 +3,8 @@ Project using Swift Composable Architecture created by point free.
 
 ## Technologies used in this prioject
 * Swift
-* SwiftUI e Combine
+* SwiftUI
+* Combine
 * SPM Modules
 * Moya/Alamofire
 * Coordinators
