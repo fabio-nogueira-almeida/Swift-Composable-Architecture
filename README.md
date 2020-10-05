@@ -5,7 +5,7 @@ Project using Swift Composable Architecture created by point free.
 * Swift
 * SwiftUI
 * Combine
-* SPM Modules
+* Swift Packege Manage Modules
 * Moya/Alamofire
 * Coordinators
 * Swift Composable Architecture (https://github.com/pointfreeco/swift-composable-architecture)
