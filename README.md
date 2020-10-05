@@ -7,7 +7,7 @@ Project using Swift Composable Architecture created by point free.
 * SPM Modules
 * Moya/Alamofire
 * Coordinators
-* Swift Composable Architecture (https://github.com/pointfreeco/swift-composable-architecture) ou MVVM.
+* Swift Composable Architecture (https://github.com/pointfreeco/swift-composable-architecture).
 
 ## Credential
   * Email: pilot@teste.com.br
