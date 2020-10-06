@@ -1,14 +1,16 @@
 # Swift-Composable-Architecture
 Project using Swift Composable Architecture created by point free.
 
-## Technologies used ins this prioject
-* Swift
-* SwiftUI e Combine
-* SPM Modules
-* Moya/Alamofire
+## Technologies used in this prioject
+* Combine
 * Coordinators
-* Swift Composable Architecture (https://github.com/pointfreeco/swift-composable-architecture) ou MVVM.
+* Moya/Alamofire
+* Swift
+* SwiftUI
+* Swift Package Manage Modules
+* Swift Composable Architecture (https://github.com/pointfreeco/swift-composable-architecture)
+
 
 ## Credential
-  * Email: pilot@teste.com.br
-  * Password: pilotTest
+  * Email: test@test.com.br
+  * Password: pilot
