@@ -12,5 +12,5 @@ Project using Swift Composable Architecture created by point free.
 
 
 ## Credential
-  * Email: pilot@teste.com.br
-  * Password: pilotTest
+  * Email: test@test.com.br
+  * Password: pilot
