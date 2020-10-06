@@ -28,7 +28,7 @@ let package = Package(
 
                 // MARK: Features modules
                 "FeatureLogin",
-				"FeaturePortfolio",
+				"FeatureWish",
 
                 // MARK: App
                 "App"
@@ -115,16 +115,16 @@ let package = Package(
 		
         /// This modules contains the app login
         .target(
-            name: "FeaturePortfolio",
+            name: "FeatureWish",
             dependencies: [
                 "CoreServices",
 				"ComposableArchitecture"
             ]
         ),
         .testTarget(
-            name: "FeaturePortfolio-Tests",
+            name: "FeatureWish-Tests",
             dependencies: [
-                "FeaturePortfolio"
+                "FeatureWish"
             ]
         ),
 
@@ -133,7 +133,7 @@ let package = Package(
             name: "App",
             dependencies: [
                 "FeatureLogin",
-				"FeaturePortfolio"
+				"FeatureWish"
             ]
         ),
         .testTarget(

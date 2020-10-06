@@ -3,14 +3,14 @@
 import ComposableArchitecture
 import Combine
 @testable import CoreServices
-@testable import FeaturePortfolio
+@testable import FeatureWish
 import XCTest
 
-class PortfolioCoreTests: XCTestCase {
+class WishCoreTests: XCTestCase {
 	
 	// MARK: - Properties
 	
-	public static let item = Portfolio(id: "1",
+	public static let item = Wish(id: "1",
 									   name: "teste",
 									   totalBalance: 0,
 									   goalAmount: 0,
@@ -22,18 +22,18 @@ class PortfolioCoreTests: XCTestCase {
 	func testShouldFetchData() {
 		let scheduler = DispatchQueue.testScheduler
 		let queue = scheduler.eraseToAnyScheduler()
-		let store = TestStore(initialState: PortfolioListState(),
-							  reducer: portfolioListReducer,
-							  environment: PortfolioListEnvironment(network: .liveMock,
+		let store = TestStore(initialState: WishListState(),
+							  reducer: wishListReducer,
+							  environment: WishListEnvironment(network: .liveMock,
 																	mainQueue: queue))
 		store.assert(
 			.send(.fetchData, { state in
 				state.isFetchRequestInFlight = true
 			}),
 			.do { scheduler.advance() },
-			.receive(.fetchDataResponse(.success(PortfolioListResponse(data: [PortfolioCoreTests.item]))), { state in
+			.receive(.fetchDataResponse(.success(WishListResponse(data: [WishCoreTests.item]))), { state in
 				state.isFetchRequestInFlight = false
-				state.models = [PortfolioCoreTests.item]
+				state.models = [WishCoreTests.item]
 			})
 		)
 	}
@@ -41,9 +41,9 @@ class PortfolioCoreTests: XCTestCase {
 	func testShouldFetchDataWithFailure() {
 		let scheduler = DispatchQueue.testScheduler
 		let queue = scheduler.eraseToAnyScheduler()
-		let store = TestStore(initialState: PortfolioListState(),
-							  reducer: portfolioListReducer,
-							  environment: PortfolioListEnvironment(network: .liveFailureMock,
+		let store = TestStore(initialState: WishListState(),
+							  reducer: wish
+							  environment: WishListEnvironment(network: .liveFailureMock,
 																	mainQueue: queue))
 		store.assert(
 			.send(.fetchData, { state in
@@ -58,9 +58,9 @@ class PortfolioCoreTests: XCTestCase {
 	
 	func testShouldShowDetailScreen()  {
 		let queue = DispatchQueue.testScheduler.eraseToAnyScheduler()
-		let store = TestStore(initialState: PortfolioListState(),
-							  reducer: portfolioListReducer,
-							  environment: PortfolioListEnvironment(network: .liveFailureMock,
+		let store = TestStore(initialState: WishoListState(),
+							  reducer: wishListReducer,
+							  environment: WishListEnvironment(network: .liveFailureMock,
 																	mainQueue: queue))
 		store.assert(
 			.send(.showDetail)
@@ -70,16 +70,16 @@ class PortfolioCoreTests: XCTestCase {
 
 // MARK: - LoginEnvironmentMock
 
-extension PortfolioNetwork {
+extension WishNetwork {
 	
-	public static let liveMock = PortfolioNetwork(fetch: {
+	public static let liveMock = WishNetwork(fetch: {
 		return Effect.future { callback in
-			let item = PortfolioCoreTests.item
-			callback(.success(PortfolioListResponse(data: [item])))
+			let item = WishCoreTests.item
+			callback(.success(WishoListResponse(data: [item])))
 		}
 	})
 	
-	public static let liveFailureMock = PortfolioNetwork(fetch: {
+	public static let liveFailureMock = WishNetwork(fetch: {
 		return Effect.future { callback in
 			callback(.failure(.requestFailure))
 		}

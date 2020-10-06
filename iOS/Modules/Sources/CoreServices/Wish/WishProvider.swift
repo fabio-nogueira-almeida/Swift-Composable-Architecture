@@ -8,11 +8,11 @@
 import Foundation
 import Moya
 
-public struct PortfolioProvider {
+public struct WishProvider {
 	
 	// MARK: - Properties
 	
-	public var provider = MoyaProvider<PortfolioService>()
+	public var provider = MoyaProvider<WishService>()
 	
 	// MARK: - Initialize
 	
@@ -20,15 +20,15 @@ public struct PortfolioProvider {
 	
 	// MARK: - Public
 	
-	public func fetch(completion: @escaping ([Portfolio]?) -> Void) {
+	public func fetch(completion: @escaping ([Wish]?) -> Void) {
 		
 		provider.request(.fetch) { result in
 			
 			switch result {
 			case .success(let response):
 			  do {
-				let results = try JSONDecoder().decode(PortifolioResponse.self, from: response.data)
-				completion(results.portfolios)
+				let results = try JSONDecoder().decode(WishResponse.self, from: response.data)
+				completion(results.wishs)
 			  } catch {
 				completion(nil)
 			  }

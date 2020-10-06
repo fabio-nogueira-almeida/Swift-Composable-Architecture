@@ -10,17 +10,16 @@ import XCTest
 
 import App
 import ComposableArchitecture
-import FeaturePortfolio
+import FeatureWish
 import XCTest
-//@testable import CoreServices
-//@testable import FeaturePortfolio
 
 class LoginCoreTests: XCTestCase {
 	func testOnAppearAction() {
-		let store = TestStore(initialState: PortfolioListState(),
-							  reducer: portfolioListReducer,
-							  environment: PortfolioListEnvironment(network: .live,
-																	mainQueue: DispatchQueue.main.eraseToAnyScheduler()))
+		let store = TestStore(initialState: WishListState(),
+							  reducer: wishListReducer,
+							  environment: WishListEnvironment(coordinator: nil,
+															   network: .live,
+															   mainQueue: DispatchQueue.main.eraseToAnyScheduler()))
 
 		store.assert(
 

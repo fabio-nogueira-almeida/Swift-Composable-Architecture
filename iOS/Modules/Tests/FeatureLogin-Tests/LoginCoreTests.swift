@@ -88,14 +88,14 @@ extension AuthenticationNetwork {
 			Effect.future { callback in
 				callback(.success(AuthenticationResponse(success: true)))
 			}
-	})
-
+		})
+	
 	public static let liveFailureMock = AuthenticationNetwork(
 		login: { request in
 			Effect.future { callback in
 				callback(.failure(.invalidCredential))
 			}
-	})
+		})
 }
 // MARK: - LoginCordinatorDelegateMock
 

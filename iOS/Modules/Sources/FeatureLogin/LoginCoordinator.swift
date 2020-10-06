@@ -49,6 +49,6 @@ public final class LoginCoordinator: Coordinator {
 
 extension LoginCoordinator: LoginCoordinatorDelegate {
 	public func goToNextFlow() {
-		coordinator?.goToNext(flow: .portfolio)
+		coordinator?.goToNext(flow: .wish)
 	}
 }

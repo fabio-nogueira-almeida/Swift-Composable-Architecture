@@ -6,7 +6,7 @@
 //
 
 import FeatureLogin
-import FeaturePortfolio
+import FeatureWish
 import SwiftUI
 import UIKit
 import RootElements
@@ -65,8 +65,8 @@ extension AppCoordinator: AppCoordinatorDelegate {
 			childCoordinators.append(coordinator)
 			coordinator.start()
 		
-		case .portfolio:
-			let coordinator = PortfolioCoordinator(presenter: topViewController ?? presenter)
+		case .wish:
+			let coordinator = WishCoordinator(presenter: topViewController ?? presenter)
 			childCoordinators.append(coordinator)
 			coordinator.start()
 			break

@@ -9,17 +9,17 @@
 import Moya
 import XCTest
 
-class PortfolioProviderTests: XCTestCase {
+class WishProviderTests: XCTestCase {
 	
 	// MARK: - Properties
 
-	var sut = PortfolioProvider()
+	var sut = WishProvider()
 	
 	// MARK: - Lifecycle
 	
 	override func setUp() {
 		super.setUp()
-		sut.provider = MoyaProvider<PortfolioService>(stubClosure: MoyaProvider.immediatelyStub)
+		sut.provider = MoyaProvider<WishService>(stubClosure: MoyaProvider.immediatelyStub)
 	}
 	
 	// MARK: - Tests

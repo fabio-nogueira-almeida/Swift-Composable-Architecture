@@ -11,13 +11,13 @@ import Moya
 
 // MARK: - LoginService
 
-public enum PortfolioService {
+public enum WishService {
 	case fetch
 }
 
 // MARK: - TargetType
 
-extension PortfolioService: TargetType {
+extension WishService: TargetType {
 	public var baseURL: URL {
 		return URL.baseURL()
 	}

@@ -11,22 +11,22 @@ import RootElements
 import SwiftUI
 import UIKit
 
-struct PortfolioDetailView: View {
+struct WishDetailView: View {
 	
 	// MARK: - Property
 	
-	var store: Store<PortfolioDetailState, PortfolioDetailAction>
+	var store: Store<WishDetailState, WishDetailAction>
 	
 	// MARK: - Initialize
 	
-	public init(model: Portfolio, coordinator: PortfolioCoordinator?) {
-		store = Store(initialState: PortfolioDetailState(model: model),
-					  reducer: portfolioDetailReducer,
-					  environment: PortfolioDetailEnviroment(coordinator: coordinator,
+	public init(model: Wish, coordinator: WishCoordinator?) {
+		store = Store(initialState: WishDetailState(model: model),
+					  reducer: wishDetailReducer,
+					  environment: WishDetailEnviroment(coordinator: coordinator,
 															 mainQueue: DispatchQueue.main.eraseToAnyScheduler()))
 	}
 	
-	public init(store: Store<PortfolioDetailState, PortfolioDetailAction>) {
+	public init(store: Store<WishDetailState, WishDetailAction>) {
 		self.store = store
 	}
 	
@@ -84,7 +84,7 @@ struct PortfolioDetailView: View {
 	
 	// MARK: - Private
 	
-	private func infos(_ viewStore: ViewStore<PortfolioDetailState, PortfolioDetailAction>) -> VStack<TupleView<(HStack<TupleView<(Text, Text)>?>, HStack<TupleView<(Text, Text)>?>, HStack<TupleView<(Text, Text)>?>)>> {
+	private func infos(_ viewStore: ViewStore<WishDetailState, WishDetailAction>) -> VStack<TupleView<(HStack<TupleView<(Text, Text)>?>, HStack<TupleView<(Text, Text)>?>, HStack<TupleView<(Text, Text)>?>)>> {
 		
 		return VStack(alignment: .leading, spacing: 8) {
 			HStack {
@@ -109,9 +109,9 @@ struct PortfolioDetailView: View {
 	}
 }
 
-struct PortfolioDetailView_Previews: PreviewProvider {
+struct WishDetailView_Previews: PreviewProvider {
 	static var previews: some View {
-		PortfolioDetailView(model: Portfolio(id: "789SDFHJK124789DSHJKA",
+		WishDetailView(model: Wish(id: 1,
 											name: "Test",
 											balance: 123140,
 											amount: 837,

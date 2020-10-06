@@ -11,14 +11,14 @@ import SwiftUI
 
 // MARK - Coordinator
 
-public protocol PortfolioCoordinatorDelegate: AnyObject {
-	func goToDetail(model: Portfolio)
+public protocol WishCoordinatorDelegate: AnyObject {
+	func goToDetail(model: Wish)
 	func dismiss()
 }
 
 // MARK - PortifolioCoordinator
 
-public final class PortfolioCoordinator: Coordinator {
+public final class WishCoordinator: Coordinator {
 	
 	// MARK: - Properties
 	
@@ -35,7 +35,7 @@ public final class PortfolioCoordinator: Coordinator {
 	// MARK: - Public
 	
 	public func start() {
-		let view = PortfolioListView(coordinator: self)
+		let view = WishListView(coordinator: self)
 		let hosting = UIHostingController(rootView: view)
 		hosting.modalPresentationStyle = .fullScreen
 		presenter?.present(hosting, animated: true, completion: nil)
@@ -45,10 +45,10 @@ public final class PortfolioCoordinator: Coordinator {
 
 // MARK: - PortifolioCoordinatorDelegate
 
-extension PortfolioCoordinator: PortfolioCoordinatorDelegate {
+extension WishCoordinator: WishCoordinatorDelegate {
 	
-	public func goToDetail(model: Portfolio) {
-		let view = PortfolioDetailView(model: model, coordinator: self)
+	public func goToDetail(model: Wish) {
+		let view = WishDetailView(model: model, coordinator: self)
 		let hosting = UIHostingController(rootView: view)
 		hosting.modalPresentationStyle = .fullScreen
 		presenter?.present(hosting, animated: true, completion: nil)	

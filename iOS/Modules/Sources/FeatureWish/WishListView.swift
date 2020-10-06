@@ -12,26 +12,26 @@ import SwiftUI
 import RootElements
 import UIKit
 
-// MARK: - PortfolioListView
+// MARK: - WishListView
 
-public struct PortfolioListView : View {
+public struct WishListView : View {
 	
 	// MARK: - Property
 	
-	var store: Store<PortfolioListState, PortfolioListAction>
+	var store: Store<WishListState, WishListAction>
 	
 	// MARK: - Initialize
 	
-	public init(coordinator: PortfolioCoordinatorDelegate?) {
-		store = Store(initialState: PortfolioListState(),
-					  reducer: portfolioListReducer,
-					  environment: PortfolioListEnvironment(
+	public init(coordinator: WishCoordinatorDelegate?) {
+		store = Store(initialState: WishListState(),
+					  reducer: wishListReducer,
+					  environment: WishListEnvironment(
 						coordinator: coordinator,
 						network: .live,
 						mainQueue: DispatchQueue.main.eraseToAnyScheduler()))
 	}
 	
-	public init(store: Store<PortfolioListState, PortfolioListAction>) {
+	public init(store: Store<WishListState, WishListAction>) {
 		self.store = store
 	}
 	
@@ -43,7 +43,7 @@ public struct PortfolioListView : View {
 			ZStack {
 				VStack {
 					HStack {
-						Text("Portfolio")
+						Text("Desejos")
 							.font(.largeTitle)
 							.fontWeight(.bold)
 							.foregroundColor(.white)
@@ -92,8 +92,8 @@ public struct PortfolioListView : View {
 
 struct CardView: View {
 	
-	let store: Store<PortfolioListState, PortfolioListAction>
-	var model: Portfolio
+	let store: Store<WishListState, WishListAction>
+	var model: Wish
 	
 	var body: some View {
 		WithViewStore(self.store) { viewStore in
@@ -120,13 +120,13 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
 	static var previews: some View {
-		CardView(store: Store(initialState: PortfolioListState(),
-							  reducer: portfolioListReducer,
-						environment: PortfolioListEnvironment(
+		CardView(store: Store(initialState: WishListState(),
+							  reducer: wishListReducer,
+						environment: WishListEnvironment(
 						  coordinator: nil,
 						  network: .live,
 						  mainQueue: DispatchQueue.main.eraseToAnyScheduler())),
-				 model: Portfolio(id: "789SDFHJK124789DSHJKA",
+				 model: Wish(id: 1,
 								  name: "Test",
 										   balance: 123140,
 										   amount: 837,

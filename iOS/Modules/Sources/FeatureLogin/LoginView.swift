@@ -65,7 +65,7 @@ public struct LoginView: View {
 					.fontWeight(.bold)
 					.padding(.vertical)
 					.padding(.horizontal, 40)
-					.background(Color("Pink"))
+					.background(Color("Blue"))
 					.clipShape(Capsule())
 					.shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
 			}
@@ -80,7 +80,7 @@ public struct LoginView: View {
 				HStack(spacing: 10) {
 					Spacer()
 					Image(systemName: "envelope.fill")
-						.foregroundColor(Color("Pink"))
+						.foregroundColor(Color("Blue"))
 					TextField(
 						"e-mail",
 						text: viewStore.binding(
@@ -89,7 +89,7 @@ public struct LoginView: View {
 						)
 					)
 					.frame(height: 40)
-					.accentColor(Color("Pink"))
+					.accentColor(Color("Blue"))
 				}
 				.background(Color.white)
 				.cornerRadius(10)
@@ -100,7 +100,7 @@ public struct LoginView: View {
 				HStack(spacing: 10) {
 					Spacer()
 					Image(systemName: "eye.slash.fill")
-						.foregroundColor(Color("Pink"))
+						.foregroundColor(Color("Blue"))
 					SecureField(
 						"Senha",
 						text: viewStore.binding(
@@ -109,7 +109,7 @@ public struct LoginView: View {
 						)
 					)
 					.frame(height: 40)
-					.accentColor(Color("Pink"))
+					.accentColor(Color("Blue"))
 				}
 				.background(Color.white)
 				.cornerRadius(10)

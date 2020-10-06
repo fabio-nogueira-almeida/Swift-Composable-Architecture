@@ -9,33 +9,33 @@ import CoreServices
 import ComposableArchitecture
 import SwiftUI
 
-// MARK: - PortfolioListState
+// MARK: - WishListState
 
-public struct PortfolioListState: Equatable {
+public struct WishListState: Equatable {
 	public init() {}
 	
-	public var models: [Portfolio] = []
+	public var models: [Wish] = []
 	public var isFetchRequestInFlight: Bool?
 }
 
-// MARK: - PortfolioListAction
+// MARK: - WishListAction
 
-public enum PortfolioListAction: Equatable {
+public enum WishListAction: Equatable {
 	case fetchData
-	case fetchDataResponse(Result<PortfolioListResponse, PortfolioError>)
-	case showDetail(_ model: Portfolio)
+	case fetchDataResponse(Result<WishListResponse, WishError>)
+	case showDetail(_ model: Wish)
 }
 
-// MARK: - PortfolioListEnvironment
+// MARK: - WishListEnvironment
 
-public struct PortfolioListEnvironment {
-	public var coordinator: PortfolioCoordinatorDelegate?
-	public var network: PortfolioNetwork
+public struct WishListEnvironment {
+	public var coordinator: WishCoordinatorDelegate?
+	public var network: WishNetwork
 	public var mainQueue: AnySchedulerOf<DispatchQueue>
 	
 	public init(
-		coordinator: PortfolioCoordinatorDelegate?,
-		network: PortfolioNetwork,
+		coordinator: WishCoordinatorDelegate?,
+		network: WishNetwork,
 		mainQueue: AnySchedulerOf<DispatchQueue>
 	) {
 		self.coordinator = coordinator
@@ -44,9 +44,9 @@ public struct PortfolioListEnvironment {
 	}
 }
 
-// MARK: - PortfolioListReducer
+// MARK: - WishListReducer
 
-public let portfolioListReducer = Reducer<PortfolioListState, PortfolioListAction, PortfolioListEnvironment> { state, action, environment in
+public let wishListReducer = Reducer<WishListState, WishListAction, WishListEnvironment> { state, action, environment in
 	
 	switch action {
 		
@@ -56,7 +56,7 @@ public let portfolioListReducer = Reducer<PortfolioListState, PortfolioListActio
 			.fetch()
 			.receive(on: environment.mainQueue)
 			.catchToEffect()
-			.map(PortfolioListAction.fetchDataResponse)
+			.map(WishListAction.fetchDataResponse)
 		
 	case let .fetchDataResponse(.success(response)):
 		state.models = response.data

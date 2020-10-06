@@ -27,5 +27,5 @@ public protocol AppCoordinatorDelegate: AnyObject {
 
 public enum CoordinatorState {
 	case login
-	case portfolio
+	case wish
 }

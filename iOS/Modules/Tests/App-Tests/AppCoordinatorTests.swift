@@ -2,7 +2,7 @@
 
 @testable import App
 import FeatureLogin
-import FeaturePortfolio
+import FeatureWish
 import XCTest
 
 class AppCoordinatorTests: XCTestCase {
@@ -24,13 +24,13 @@ class AppCoordinatorTests: XCTestCase {
 		sut?.start()
 		XCTAssertTrue(sut?.childCoordinators.count == 1)
 		XCTAssertTrue(sut?.childCoordinators.last is LoginCoordinator)
-		XCTAssertFalse(sut?.childCoordinators.last is PortfolioCoordinator)
+		XCTAssertFalse(sut?.childCoordinators.last is WishCoordinator)
 	}
 	
-	func testShouldPresentPortfolioFlow() {
-		sut?.goToNext(flow: .portfolio)
+	func testShouldPresentWishFlow() {
+		sut?.goToNext(flow: .wish)
 		XCTAssertTrue(sut?.childCoordinators.count == 1)
-		XCTAssertTrue(sut?.childCoordinators.last is PortfolioCoordinator)
+		XCTAssertTrue(sut?.childCoordinators.last is WishCoordinator)
 	}
 }
 
