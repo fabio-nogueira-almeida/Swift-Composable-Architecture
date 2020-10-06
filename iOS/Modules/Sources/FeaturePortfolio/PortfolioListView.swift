@@ -104,7 +104,7 @@ struct CardView: View {
 					.foregroundColor(.black)
 				Spacer()
 				Spacer()
-				ImageLoaded(withURL: (self.model.background?.thumb)!)
+				ImageLoaded(withURL: (self.model.background?.small)!)
 					.frame(width: 100, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
 					.clipShape(Circle())
 			}
@@ -131,11 +131,9 @@ struct CardView_Previews: PreviewProvider {
 										   balance: 123140,
 										   amount: 837,
 										   date: "2020/12/12",
-										   image: Background(thumb: "",
-															 small: "",
+										   image: Background(small: "",
 															 full: "",
-															 regular: "",
-															 raw: "")))
+															 regular: "")))
 			.background(Color.gray)
 	}
 }

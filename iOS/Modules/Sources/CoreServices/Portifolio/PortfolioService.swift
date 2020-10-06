@@ -85,7 +85,7 @@ extension PortfolioService: TargetType {
 	
 	public var headers: [String: String]? {
 		return ["Content-type": "application/json",
-				"Authorization": String(CredentialDataSource().getCredential()?.autorizationToken ?? "")]
+				"Authorization": String(CredentialDataSource().getCredential()?.auth_token ?? "")]
 	}
 }
 

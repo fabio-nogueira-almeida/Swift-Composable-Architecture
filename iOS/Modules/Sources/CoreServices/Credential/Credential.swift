@@ -10,9 +10,9 @@ import Foundation
 // MARK: - Credential
 
 public struct Credential: Decodable {
-	let autorizationToken: String
+	let auth_token: String
 	
 	init(autorizationToken: String) {
-		self.autorizationToken = autorizationToken
+		self.auth_token = autorizationToken
 	}
 }

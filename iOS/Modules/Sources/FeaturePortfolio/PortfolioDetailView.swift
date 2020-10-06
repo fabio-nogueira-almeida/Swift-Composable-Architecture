@@ -116,11 +116,9 @@ struct PortfolioDetailView_Previews: PreviewProvider {
 											balance: 123140,
 											amount: 837,
 											date: "2020/12/12",
-											image: Background(thumb: "",
-															  small: "",
+											image: Background(small: "",
 															  full: "",
-															  regular: "",
-															  raw: "")),
+															  regular: "")),
 							coordinator: nil)
 	}
 }

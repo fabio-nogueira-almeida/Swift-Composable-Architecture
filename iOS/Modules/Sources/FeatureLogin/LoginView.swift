@@ -34,9 +34,10 @@ public struct LoginView: View {
 			NavigationView {
 				GeometryReader { _ in
 					VStack {
-						Image("WishLogoWithText")
+						Image("WhishLogoWithText")
 							.resizable()
-							.frame(width: 140, height: 140)
+							.aspectRatio(contentMode: .fit)
+							.frame(width: 200, height: 100)
 						ZStack(alignment: .bottom) {
 							Form(viewStore)
 							Button(viewStore)

@@ -19,7 +19,7 @@ struct CredentialDataSource {
 	func save(_ credential: Credential) {
 		if let identifier = Bundle.main.bundleIdentifier {
 			let keychain = Keychain(service: identifier)
-			keychain[autorization_token] = credential.autorizationToken
+			keychain[autorization_token] = credential.auth_token
 		}
 	}
 	

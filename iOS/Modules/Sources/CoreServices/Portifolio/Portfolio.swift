@@ -33,7 +33,7 @@ public struct Portfolio: Equatable, Identifiable  {
 	public let color: UIColor = UIColor.randomColor()
 
 	public static func == (lhs: Portfolio, rhs: Portfolio) -> Bool {
-		return lhs.id == rhs.id
+		return lhs.name == rhs.name
 	}
 	
 	public init(id: String, name: String, balance: Float, amount: Float, date: String, image: Background) {
@@ -50,8 +50,7 @@ public struct Portfolio: Equatable, Identifiable  {
 
 extension Portfolio: Decodable {
 	enum PortifolioCodingKeys: String, CodingKey {
-		case name, totalBalance, goalAmount, goalDate, background
-		case id = "_id"
+		case id, name, totalBalance, goalAmount, goalDate, background
 	}
 	
 	public init(from decoder: Decoder) throws {
@@ -69,17 +68,13 @@ extension Portfolio: Decodable {
 // MARK: - Background
 
 public struct Background: Decodable {
-	public let thumb: String
 	public let small: String
 	public let full: String
 	public let regular: String
-	public let raw: String
 	
-	public init(thumb: String, small: String, full: String, regular: String, raw: String) {
-		self.thumb = thumb
+	public init(small: String, full: String, regular: String) {
 		self.small = small
 		self.full = full
 		self.regular = regular
-		self.raw = raw
 	}
 }
