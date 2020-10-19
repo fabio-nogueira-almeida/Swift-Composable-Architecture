@@ -1,7 +1,7 @@
 # Swift-Composable-Architecture
 Project using Swift Composable Architecture created by point free.
 
-## Technologies used in this prioject
+## Technologies used in this project
 * Combine
 * Coordinators
 * Moya/Alamofire
