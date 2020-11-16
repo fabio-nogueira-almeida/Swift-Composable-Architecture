@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": null,
-          "revision": "becd9a729a37bdbef5bc39dc3c702b99f9e3d046",
-          "version": "5.2.2"
+          "revision": "9e0328127dfb801cefe8ac53a13c0c90a7770448",
+          "version": "5.4.0"
         }
       },
       {
@@ -42,7 +42,7 @@
         "repositoryURL": "https://github.com/Moya/Moya.git",
         "state": {
           "branch": "development",
-          "revision": "9f93bbd60d515ecec518d6bb96bdfec038d4535f",
+          "revision": "9e58dc5759d8a8b260fd0be5bbe8bc98ed31226e",
           "version": null
         }
       },
@@ -123,8 +123,8 @@
         "repositoryURL": "https://github.com/pointfreeco/swift-composable-architecture.git",
         "state": {
           "branch": null,
-          "revision": "47a9d368d1f314a630bf91b71acfb5054420eeb3",
-          "version": "0.8.0"
+          "revision": "b67569f69813140cd9c984db33ee959d9711a008",
+          "version": "0.9.0"
         }
       },
       {
